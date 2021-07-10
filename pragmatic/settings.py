@@ -133,6 +133,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# static 모으기 명령어를 실행했을때 어디로 결과가 모일지
+#
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
