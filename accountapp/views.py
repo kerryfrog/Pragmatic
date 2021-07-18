@@ -40,12 +40,14 @@ class AccountDetailView(DetailView):
 # updatd와 create는 사실상 기능이 거의 비슷
 class AccountUpdateView(UpdateView):
     model = User          #장고에서 기본 제공하는 유져
+    context_object_name = 'target_user'
     form_class = AccountUpdateForm
     success_url = reverse_lazy('accountapp:hello_world')  #reverse_lazy 클래스에서 사용하려면 reverse_lazy 사용해야함
     template_name = 'accountapp/update.html'   #어떤 html 파일을 이용해서 볼것인지
 
 class AccountDeleteView(DeleteView):
     model = User          #장고에서 기본 제공하는 유져
+    context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:login')  #reverse_lazy 클래스에서 사용하려면 reverse_lazy 사용해야함
     template_name = 'accountapp/delete.html'   #어떤 html 파일을 이용해서 볼것인지
 
