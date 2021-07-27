@@ -19,4 +19,5 @@ urlpatterns = [
     path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
     path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
     path('delete/<int:pk>', AccountDeleteView.as_view(), name='delete'),
+
 ]
