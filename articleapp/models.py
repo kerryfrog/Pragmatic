@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Article(models.Model):
+    objects = None
     writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='article', null=True)
 
     title = models.CharField(max_length=200, null=True)
