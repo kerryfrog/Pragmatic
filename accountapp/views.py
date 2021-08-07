@@ -25,7 +25,7 @@ has_ownership = [ account_ownership_required , login_required]
 class AccountCreateView(CreateView):
     model = User          #장고에서 기본 제공하는 유져
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:hello_world')  #reverse_lazy 클래스에서 사용하려면 reverse_lazy 사용해야함
+    success_url = reverse_lazy('articleapp:list')  #reverse_lazy 클래스에서 사용하려면 reverse_lazy 사용해야함
     template_name = 'accountapp/create.html'   #어떤 html 파일을 이용해서 볼것인지
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
@@ -46,7 +46,7 @@ class AccountUpdateView(UpdateView):
     model = User          #장고에서 기본 제공하는 유져
     context_object_name = 'target_user'
     form_class = AccountUpdateForm
-    success_url = reverse_lazy('accountapp:hello_world')  #reverse_lazy 클래스에서 사용하려면 reverse_lazy 사용해야함
+    success_url = reverse_lazy('articleapp:list')  #reverse_lazy 클래스에서 사용하려면 reverse_lazy 사용해야함
     template_name = 'accountapp/update.html'   #어떤 html 파일을 이용해서 볼것인지
 
 
